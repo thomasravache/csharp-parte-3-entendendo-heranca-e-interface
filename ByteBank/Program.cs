@@ -27,7 +27,10 @@ namespace ByteBank
 
             gerenciador.Registrar(roberta);
 
+            Funcionario pedro = new Diretor();
+
             Console.WriteLine(carlos.GetBonificacao());
+            Console.WriteLine(gerenciador.GetTotalBonificacao());
 
             Console.ReadLine();
         }
