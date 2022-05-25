@@ -29,7 +29,12 @@ namespace ByteBank
 
             Funcionario pedro = new Diretor();
 
+            Console.WriteLine("Funcionário comum: " + carlos.Nome);
             Console.WriteLine(carlos.GetBonificacao());
+
+            Console.WriteLine("Diretora: " + roberta.Nome);
+            Console.WriteLine(roberta.GetBonificacao());
+
             Console.WriteLine(gerenciador.GetTotalBonificacao());
 
             Console.ReadLine();
