@@ -11,36 +11,33 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-            Funcionario carlos = new Funcionario("1231322132", 2000);
+            CalcularBonificacao();
+            Console.ReadLine();
+        }
 
-            carlos.Nome = "Carlos";
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
 
-            carlos.AumentarSalario();
-            Console.WriteLine("Novo salário do carlos: " + carlos.Salario);
+            Designer pedro = new Designer("1312313");
+            pedro.Nome = "Pedro";
 
-            gerenciador.Registrar(carlos);
-
-            Diretor roberta = new Diretor("13214546", 5000);
+            Diretor roberta = new Diretor("12311516");
             roberta.Nome = "Roberta";
 
-            roberta.AumentarSalario();
-            Console.WriteLine("Novo salário da roberta: " + roberta.Salario);
+            Auxiliar igor = new Auxiliar("1156116");
+            igor.Nome = "Igor";
 
+            GerenteDeConta camila = new GerenteDeConta("12312131");
+            camila.Nome = "Camila";
 
-            gerenciador.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(camila);
 
-            Funcionario pedro = new Diretor("1312544", 5000);
-
-            Console.WriteLine("Funcionário comum: " + carlos.Nome);
-            Console.WriteLine(carlos.GetBonificacao());
-
-            Console.WriteLine("Diretora: " + roberta.Nome);
-            Console.WriteLine(roberta.GetBonificacao());
-
-            Console.WriteLine(gerenciador.GetTotalBonificacao());
-
-            Console.ReadLine();
+            Console.WriteLine("Total de bonificações do mês " + 
+                gerenciadorBonificacao.GetTotalBonificacao());
         }
     }
 }
